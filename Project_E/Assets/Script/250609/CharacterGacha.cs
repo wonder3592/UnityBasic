@@ -8,9 +8,9 @@ public class CharacterGacha : MonoBehaviour
 
     public List<string> characterList = new List<string>();
 
-    private string[] colorCharacters = { "은색머리", "파란머리", "분홍머리" };
+    private string[] colorCharacters = { "<color=#FFFF00>안중재 강사님</color>", "<color=#FFFF00>양현석 강사님</color>", "<color=#FFFF00>김선민 강사님</color>" };
 
-    public int selectNumbe = 0;
+    public int selectNumbe = -1;
 
     private int count = 0; // 전체 누적 카운트
 
@@ -26,8 +26,35 @@ public class CharacterGacha : MonoBehaviour
         characterList.Add("최현석");
     }
 
+    public void SelectSilver()
+    {
+        selectNumbe = 0;
+        Txt_Gacha.text = "중재 티쳐 선택!";
+        count = 0;
+    }
+
+    public void SelectBlue()
+    {
+        selectNumbe = 1;
+        Txt_Gacha.text = "현석 티쳐 선택!";
+        count = 0;
+    }
+
+    public void SelectPink()
+    {
+        selectNumbe = 2;
+        Txt_Gacha.text = "선민 티쳐 선택!";
+        count = 0;
+    }
+
+
     public void GachaTenPull()
     {
+        if (selectNumbe == -1)
+        {
+            Txt_Gacha.text = "원하는 강사님을 먼저 선택해주세요!";
+            return;
+        }
         string resultText = "=== 10연차 결과 ===\n";
 
         for (int i = 0; i < 10; i++)

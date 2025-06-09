@@ -17,7 +17,7 @@ public class Test : MonoBehaviour
     }
     /* void OnEnable()
      {
-         Random.InitState(1); //시드값설정 값은값나옴
+         Random.InitState(1); //시드값설정 같은값나옴
          Debug.Log(Random.Range(1, 100));
          // 1 이상 100 미만의 랜덤한 값을 만들겠다.
      }

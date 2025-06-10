@@ -18,7 +18,7 @@ public class ArrayList : MonoBehaviour
         Debug.Log("범인은? " + character[randomValue] + "님 였습니다.");
         Txt_Bumin.text = "범인은? " + character[randomValue] + "님 였습니다.";
     }
-    
+
     void Start()
     {
         characterList.Add("정은교");
